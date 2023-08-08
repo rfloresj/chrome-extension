@@ -13,8 +13,14 @@ inputBtn.addEventListener("click", () => {
 function renderLeads() {
   let listItems = "";
   for (let i = 0; i < myLeads.length; i++) {
-    listItems += "<li><a target='_blank' rel='noopener noreferrer' href= 'http://" + myLeads[i] + "'>" + myLeads[i] + "</a></li>";
-    console.log(listItems)
+    // listItems += "<li><a target='_blank' rel='noopener noreferrer' href= 'http://" + myLeads[i] + "'>" + myLeads[i] + "</a></li>";
+    listItems += `
+        <li>
+            <a target='_blank' rel='noopener noreferrer' href='${'http://' + myLeads[i]}'>
+                ${myLeads[i]}
+            </a>
+        </li>
+    `
   }
   ulEl.innerHTML = listItems;
 }
