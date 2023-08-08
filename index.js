@@ -13,7 +13,10 @@ inputBtn.addEventListener("click", () => {
 function renderLeads() {
   let listItems = "";
   for (let i = 0; i < myLeads.length; i++) {
-    listItems += "<li>" + myLeads[i] + "</li>";
+    listItems += "<li><a target='_blank' rel='noopener noreferrer' href= 'http://" + myLeads[i] + "'>" + myLeads[i] + "</a></li>";
+    console.log(listItems)
   }
   ulEl.innerHTML = listItems;
 }
+
+//rel="noopener noreferrer"
