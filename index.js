@@ -16,7 +16,7 @@ function renderLeads() {
     // listItems += "<li><a target='_blank' rel='noopener noreferrer' href= 'http://" + myLeads[i] + "'>" + myLeads[i] + "</a></li>";
     listItems += `
         <li>
-            <a target='_blank' rel='noopener noreferrer' href='${'http://' + myLeads[i]}'>
+            <a target='_blank' rel='noopener noreferrer' href='${myLeads[i]}'>
                 ${myLeads[i]}
             </a>
         </li>
