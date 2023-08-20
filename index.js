@@ -1,13 +1,18 @@
 let myLeads = [];
+
 const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 
 inputBtn.addEventListener("click", () => {
   myLeads.push(inputEl.value);
-  // Clear out the input field
+  // Clear out the input field0
   inputEl.value = '';
+  localStorage.setItem("myLeads", JSON.stringify(myLeads));
+
   renderLeads();
+
+  console.log(localStorage.getItem("myLeads"));
 });
 
 function renderLeads() {
