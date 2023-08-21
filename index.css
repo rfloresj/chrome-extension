@@ -19,7 +19,7 @@ input:focus{
 
 button{
     background: #5f9341;
-    border: none;
+    border: 1px solid #5f9341;
     color: white;
     padding: 10px 20px;
     margin-top: 5px;
@@ -27,6 +27,11 @@ button{
 }
 
 /* Styling the list */
+
+#delete-btn {
+    background-color: white;
+    color: #5f9341;
+}
 
 ul {
     margin-top: 20px;
