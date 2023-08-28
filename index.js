@@ -12,13 +12,14 @@ if (leadsFromLocalStorage) {
   render(myLeads);
 }
 
-const tabs = [{ url: "https://www.amazon.com" }];
+// const tabs = [{ url: "https://www.amazon.com" }]; //hard coded variable
 
 tabBtn.addEventListener("click", () => {
-  myLeads.push(tabs[0].url);
-  localStorage.setItem("myLeads", JSON.stringify(myLeads));
-  render(myLeads)
-  // console.log(tabs[0].url);
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    myLeads.push(tabs[0].url);
+    localStorage.setItem("myLeads", JSON.stringify(myLeads));
+    render(myLeads);
+  });
 });
 
 function render(leads) {
