@@ -5,20 +5,21 @@ const inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 const deleteBtn = document.getElementById("delete-btn");
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
-const tabBtn = document.getElementById('tab-btn');
+const tabBtn = document.getElementById("tab-btn");
 
 if (leadsFromLocalStorage) {
   myLeads = leadsFromLocalStorage;
   render(myLeads);
 }
 
-const tabs = [
-  {url: "https://www.amazon.com"}
-];
+const tabs = [{ url: "https://www.amazon.com" }];
 
 tabBtn.addEventListener("click", () => {
-  console.log(tabs[0].url);
-}) 
+  myLeads.push(tabs[0].url);
+  localStorage.setItem("myLeads", JSON.stringify(myLeads));
+  render(myLeads)
+  // console.log(tabs[0].url);
+});
 
 function render(leads) {
   let listItems = "";
@@ -43,14 +44,12 @@ deleteBtn.addEventListener("dblclick", () => {
 
 inputBtn.addEventListener("click", () => {
   myLeads.push(inputEl.value);
-  // Clear out the input field0
+  // Clear out the input field
   inputEl.value = "";
   localStorage.setItem("myLeads", JSON.stringify(myLeads));
   render(myLeads);
   //To verify that it works:
   //console.log(localStorage.getItem("myLeads"));
 });
-
-
 
 //rel="noopener noreferrer"
